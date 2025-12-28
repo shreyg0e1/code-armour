@@ -1,0 +1,100 @@
+{
+  "name": "code-armour",
+  "displayName": "Code Armour",
+  "description": "AI-powered code review agent, your coding buddy that provides his coding army with armour",
+  "version": "1.0.0",
+  "publisher": "shrey-goel",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "code review",
+    "ai",
+    "bug detection",
+    "security",
+    "optimization"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-armour.reviewCurrentFile",
+        "title": "🛡️ Code Armour: Review Current File",
+        "category": "Code Armour"
+      },
+      {
+        "command": "code-armour.reviewWorkspace",
+        "title": "🛡️ Code Armour: Review Entire Workspace",
+        "category": "Code Armour"
+      },
+      {
+        "command": "code-armour.setApiKey",
+        "title": "🔑 Code Armour: Set API Key",
+        "category": "Code Armour"
+      },
+      {
+        "command": "code-armour.toggleRealTime",
+        "title": "⚡ Code Armour: Toggle Real-time Review",
+        "category": "Code Armour"
+      }
+    ],
+    "configuration": {
+      "title": "Code Armour",
+      "properties": {
+        "codeArmour.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your Google GenAI API Key (Get from https://aistudio.google.com/apikey)",
+          "scope": "application"
+        },
+        "codeArmour.realTimeEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable real-time code review as you type (like GitHub Copilot)",
+          "scope": "window"
+        },
+        "codeArmour.autoFixOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically apply fixes when you save the file",
+          "scope": "window"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "code-armour.reviewCurrentFile",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.107.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.1"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "license": "MIT"
+}
