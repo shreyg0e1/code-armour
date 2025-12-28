@@ -5,6 +5,14 @@
   "version": "1.0.0",
   "publisher": "shrey-goel",
   "icon": "images/logo.png",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/shreyg0e1/code-armour"
+},
+"bugs": {
+  "url": "https://github.com/shreyg0e1/code-armour/issues"
+},
+"homepage": "https://github.com/shreyg0e1/code-armour#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
