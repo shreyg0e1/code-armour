@@ -2,7 +2,7 @@
   "name": "code-armour",
   "displayName": "Code Armour",
   "description": "AI-powered code review agent, your coding buddy that provides his coding army with armour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "shrey-goel",
   "icon": "images/logo.png",
   "repository": {
